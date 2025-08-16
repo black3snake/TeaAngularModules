@@ -1,0 +1,8 @@
+<div *ngIf="showPopup" class="popup">
+  <div class="popup__title">Посмотрите наши чайные коллекции</div>
+  <img class="img-fluid" src="/assets/images/popup.png" alt="Collection products">
+  <div class="popup__action">
+    <button (click)="goProducts()">Смотреть</button>
+    <button (click)="hide()">Закрыть</button>
+  </div>
+</div>

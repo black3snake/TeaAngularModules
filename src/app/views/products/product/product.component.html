@@ -1,0 +1,17 @@
+<section class="product mb-4 mt-4 container">
+  <div class="product__part1">
+    <div class="product__left">
+      <img class="product__left-img img-fluid" src="{{product.image}}" alt="{{product.title}}">
+    </div>
+    <div class="product__right">
+      <div class="product__right-title">{{product.title}}</div>
+      <div class="product__right-price">Цена: {{product.price}} руб.</div>
+      <div class="product__right-action">
+        <button class="btn btn-primary" routerLink="/order" [queryParams]="{product: product.title}">Купить</button>
+      </div>
+    </div>
+  </div>
+  <div class="product__part2">
+    <p class="product__description">{{product.description}}</p>
+  </div>
+</section>

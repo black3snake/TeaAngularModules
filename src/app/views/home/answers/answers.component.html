@@ -1,0 +1,15 @@
+<section class="answers container">
+  <h2 class="answers__title text-center fs-2 fw-bold text-black mb-5">Ответы на часто задаваемые вопросы</h2>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let answer of answers">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{answer.question}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{answer.answer}}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</section>

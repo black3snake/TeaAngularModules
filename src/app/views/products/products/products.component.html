@@ -1,0 +1,27 @@
+<section class="products pb-5 mb-4 mt-4 container">
+  <h2 class="products__title text-center fs-2 fw-bold text-black mb-5" *ngIf="!currentQuery">Наши чайные коллекции</h2>
+  <h2 class="products__title text-center fs-2 fw-bold text-black mb-5" *ngIf="currentQuery">Результаты поиска: "{{currentQuery}}"</h2>
+  <div class="row">
+    <div *ngFor="let product of products" class="col-lg-4 col-sm-6 mb-3">
+      <!--    <div  class="col-lg-4 col-sm-6 mb-3">-->
+      <div class="card">
+        <a class="card-image">
+          <img class="card-img-top" src="{{product.image}}" alt="{{product.title}}">
+        </a>
+        <div class="card-body py-3 px-4 my-1">
+          <h5 class="card-title fw-bold mb-2">{{ product.title }}</h5>
+          <p class="card-text mt-1 mb-4 text-black fs-6 fw-normal overflow-hidden"
+             style="height: 80px;">{{ product.description | textLimit }}</p>
+          <a href="#"
+             class="btn btn-primary w-50 hvr-float-shadow fs-6 fw-normal text-white px-1 py-2 rounded-1"
+             [routerLink]="['/products', product.id]">
+            Подробнее
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="loading" class="loader-bg">
+    <div class="loader"></div>
+  </div>
+</section>

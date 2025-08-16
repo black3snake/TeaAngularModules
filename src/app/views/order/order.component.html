@@ -1,0 +1,109 @@
+<section class="order mt-5 pt-1 mb-5 container" *ngIf="formIsView; else defaultImageBlock">
+  <h2 class="order__title text-center fs-2 fw-bold text-black mb-3 pb-3">Сделать заказ</h2>
+  <div class="row justify-content-center">
+    <div class="col-xl-6 col-lg-8">
+      <form class="row g-3 pt-1" novalidate [formGroup]="checkoutForm">
+        <div class="col-md-4">
+          <label for="inputName" class="form-label">Имя</label>
+          <input type="text" class="form-control border border-secondary border-opacity-50"
+                 id="inputName" formControlName="inputName" [class.is-invalid]="isFieldInvalid('inputName')">
+          <div class="invalid-feedback" *ngIf="isFieldInvalid('inputName')">
+            <span *ngIf="inputName?.errors?.['required']">
+                  Обязательное поле.
+            </span>
+            <span *ngIf="inputName?.errors?.['pattern']">
+                  Необходимы только буквы.
+            </span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="inputLastName" class="form-label">Фамилия</label>
+          <input type="text" class="form-control border border-secondary border-opacity-50"
+                 id="inputLastName" formControlName="inputLastName" [class.is-invalid]="isFieldInvalid('inputLastName')">
+          <div class="invalid-feedback" *ngIf="isFieldInvalid('inputLastName')">
+            <span *ngIf="inputLastName?.errors?.['required']">
+                  Обязательное поле.
+            </span>
+            <span *ngIf="inputLastName?.errors?.['pattern']">
+                  Необходимы только буквы.
+            </span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="inputPhone" class="form-label">Телефон</label>
+          <input type="text" class="form-control border border-secondary border-opacity-50"
+                 id="inputPhone" formControlName="inputPhone" [class.is-invalid]="isFieldInvalid('inputPhone')">
+          <div class="invalid-feedback" *ngIf="isFieldInvalid('inputPhone')">
+            <span *ngIf="inputPhone?.errors?.['required']">
+                  Обязательное поле.
+            </span>
+            <span *ngIf="inputPhone?.errors?.['pattern']">
+                  Необходимо 11 цифр.
+            </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputCountry" class="form-label">Страна</label>
+          <input type="text" class="form-control border border-secondary border-opacity-50"
+                 id="inputCountry" formControlName="inputCountry" [class.is-invalid]="isFieldInvalid('inputCountry')">
+          <div class="invalid-feedback" *ngIf="isFieldInvalid('inputCountry')">
+            <span *ngIf="inputCountry?.errors?.['required']">
+                  Обязательное поле.
+            </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputIndex" class="form-label">Индекс</label>
+          <input type="text" class="form-control border border-secondary border-opacity-50"
+                 id="inputIndex" formControlName="inputIndex" [class.is-invalid]="isFieldInvalid('inputIndex')">
+          <div class="invalid-feedback" *ngIf="isFieldInvalid('inputIndex')">
+            <span *ngIf="inputIndex?.errors?.['required']">
+                  Обязательное поле.
+            </span>
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="inputProduct" class="form-label">Продукт</label>
+          <input type="text" class="form-control border border-secondary border-opacity-50"
+                 id="inputProduct" formControlName="inputProduct" [class.is-invalid]="isFieldInvalid('inputProduct')" [readonly]="true">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Адрес</label>
+          <input type="text" class="form-control border border-secondary border-opacity-50"
+                 id="inputAddress" formControlName="inputAddress" [class.is-invalid]="isFieldInvalid('inputAddress')">
+          <div class="invalid-feedback" *ngIf="isFieldInvalid('inputAddress')">
+            <span *ngIf="inputAddress?.errors?.['required']">
+                  Обязательное поле.
+            </span>
+            <span *ngIf="inputAddress?.errors?.['pattern']">
+                  Необходимы только буквы.
+            </span>
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="inputComment" class="form-label">Коментарий</label>
+          <textarea class="form-control border border-secondary border-opacity-50"
+                    id="inputComment" formControlName="inputComment" [class.is-invalid]="isFieldInvalid('inputComment')">
+          </textarea>
+          <div class="invalid-feedback d-block" *ngIf="orderNotSent">
+            Произошла ошибка. Попробуйте еще раз.
+          </div>
+        </div>
+        <div class="col-12 gy-4">
+          <button type="submit" class="btn btn-primary" (click)="createOrder()">Отправить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<ng-template #defaultImageBlock>
+  <section class="container mt-5 mb-5 pt-5 pb-5" >
+    <div class="row justify-content-center align-items-center">
+      <div class="col-xl-6 col-lg-8">
+        <div class="alert alert-primary mx-auto alert__title fs-4 text-center" role="alert">
+          Спасибо за заказ!
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-template>

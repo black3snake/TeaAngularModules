@@ -1,0 +1,47 @@
+.product {
+  .product__part1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .product__left {
+       .product__left-img {
+          width: 400px;
+       }
+    }
+    .product__right {
+      display: flex;
+      flex-direction: column;
+      flex: auto;
+      text-align: right;
+      .product__right-title {
+        font-size: 45px;
+        font-family: Muller, sans-serif;
+      }
+      .product__right-price {
+        font-size: 20px;
+        font-family: Muller, sans-serif;
+      }
+      .product__right-action {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
+    }
+  }
+  .product__part2 {
+    display: flex;
+    .product__description {
+      line-height: 1.5; /* Стандартный межстрочный интервал */
+      margin: 0; /* Убираем внешние отступы */
+      font-family: Muller, sans-serif;
+      &::first-letter {
+        font-size: 2.5em; /* Увеличиваем размер */
+        float: left; /* Обтекание текстом */
+        margin-right: 5px; /* Отступ от остального текста */
+        line-height: 1; /* Фиксируем line-height для буквы */
+        vertical-align: top; /* Выравниваем по верху */
+      }
+    }
+  }
+}

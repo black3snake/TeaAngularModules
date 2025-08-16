@@ -1,1 +1,95 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Butler Bold";
+  src: url(/assets/fonts/Butler_Bold.otf);
+}
+@font-face {
+  font-family: Muller;
+  src: url(/assets/fonts/MullerRegular.otf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: MullerBold;
+  src: url(/assets/fonts/MullerBold.otf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: Roboto;
+  src: url(/assets/fonts/Roboto-Regular.ttf);
+  font-weight: 400;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+html, body, app-root { height: 100%; }
+//body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+app-root {
+  display: flex;
+  flex-direction: column;
+}
+app-product,
+app-order {
+  flex-grow: 1;
+}
+
+// Acardion
+.mat-expansion-panel-content {
+  .mat-expansion-panel-body {
+    padding: 16px 24px;
+    p {
+      font-size: 16px;
+    }
+  }
+}
+.mat-expansion-panel-header {
+  .mat-expansion-indicator {
+    &::after {
+      border-width: 0 3px 3px 0;
+      color: white;
+    }
+  }
+}
+
+// SPIN
+.loader-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.25);
+
+  .loader {
+    border: 15px solid #f3f3f3;
+    border-top: 15px solid #ffaf18;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
