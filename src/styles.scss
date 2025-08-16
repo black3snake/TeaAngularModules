@@ -6,21 +6,21 @@
 
 @font-face {
   font-family: "Butler Bold";
-  src: url(/assets/fonts/Butler_Bold.otf);
+  src: url('./assets/fonts/Butler_Bold.otf');
 }
 @font-face {
   font-family: Muller;
-  src: url(/assets/fonts/MullerRegular.otf);
+  src: url('./assets/fonts/MullerRegular.otf');
   font-weight: normal;
 }
 @font-face {
   font-family: MullerBold;
-  src: url(/assets/fonts/MullerBold.otf);
+  src: url('./assets/fonts/MullerBold.otf');
   font-weight: 700;
 }
 @font-face {
   font-family: Roboto;
-  src: url(/assets/fonts/Roboto-Regular.ttf);
+  src: url('./assets/fonts/Roboto-Regular.ttf');
   font-weight: 400;
 }
 
